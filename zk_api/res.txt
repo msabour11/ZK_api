@@ -1,0 +1,107 @@
+[
+    {
+        "enrollNumber": "1001",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "962",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:49"
+    },
+    {
+        "enrollNumber": "561",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:41:08"
+    },
+    {
+        "enrollNumber": "390",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:43:18"
+    },
+    {
+        "enrollNumber": "1061",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:46:25"
+    },
+    {
+        "enrollNumber": "1105",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:08"
+    },
+    {
+        "enrollNumber": "1105",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:11"
+    },
+
+    {
+        "enrollNumber": "1636",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:11"
+        },
+
+
+    {
+        "enrollNumber": "1001",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "962",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:39:49"
+    },
+    {
+        "enrollNumber": "561",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:41:08"
+    },
+    {
+        "enrollNumber": "390",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:43:18"
+    },
+    {
+        "enrollNumber": "1061",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T18:46:25"
+    },
+    {
+        "enrollNumber": "1105",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:08"
+    },
+    {
+        "enrollNumber": "1105",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:11"
+    },
+    {
+        "enrollNumber": "1292",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:11"
+        },
+{
+    "enrollNumber": "1636",
+    "verifyMode": 4,
+    "inOutMode": 0,
+    "dateTime": "2024-03-05T19:01:12"
+}
+]
