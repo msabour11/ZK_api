@@ -42,6 +42,7 @@
         "dateTime": "2024-03-05T19:01:11"
     },
 
+
     {
         "enrollNumber": "1636",
         "verifyMode": 4,
@@ -81,7 +82,13 @@
         "dateTime": "2024-03-05T18:46:25"
     },
     {
-        "enrollNumber": "1105",
+        "enrollNumber": "1999",
+        "verifyMode": 4,
+        "inOutMode": 0,
+        "dateTime": "2024-03-05T19:01:08"
+    },
+    {
+        "enrollNumber": "1998",
         "verifyMode": 4,
         "inOutMode": 0,
         "dateTime": "2024-03-05T19:01:08"
