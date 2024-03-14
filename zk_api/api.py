@@ -30,8 +30,7 @@ def get_log():
                     "type": type1
 
                 })
-                # doc.name = frappe.db.get_value("Naming Series", {"name": "Device Log"}, "current") or "DL-.#####"
-                # doc.name = frappe.get_series("Device Log", {"name": "DL-.#####"})
+                
                 doc.name = str(uuid.uuid4())
                 doc.insert()
 
@@ -46,3 +45,18 @@ def get_log():
         return f"An error occurred: {e}"
 
     # return data
+
+
+@frappe.whitelist(allow_guest=True)
+def filter_device_logs():
+    # Get start_date and end_date from ZK Settings
+    zk_settings = frappe.get_doc("Zk Settings")
+    if zk_settings.start_date is None or zk_settings.end_date is None:
+        frappe.msgprint('error')
+    start_date = datetime.strptime(zk_settings.start_date, '%Y-%m-%d').date()
+    end_date = datetime.strptime(zk_settings.end_date, '%Y-%m-%d').date()
+
+    # Get Device Log records within the date range
+    device_logs = frappe.get_all('Device Log', filters={'date': ['between', [start_date, end_date]]}, fields=['name', 'enroll_no', 'date', 'custom_time1', 'type'])
+
+    return device_logs
