@@ -5,13 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "filter_logs",
-  "section_break_egna",
-  "device_logs",
   "section_break_qpmq",
   "start_date",
   "column_break_ozxw",
   "end_date",
+  "section_break_nifa",
+  "filter_logs",
+  "column_break_wmzl",
+  "get_logs",
+  "section_break_egna",
+  "device_logs",
   "section_break_kvew",
   "ip",
   "column_break_xobs",
@@ -111,13 +114,28 @@
    "fieldname": "device_logs",
    "fieldtype": "Table",
    "label": "Device Logs",
-   "options": "Logs Table"
+   "options": "Logs Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nifa",
+   "fieldtype": "Section Break",
+   "label": "Logs"
+  },
+  {
+   "fieldname": "column_break_wmzl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_logs",
+   "fieldtype": "Button",
+   "label": "Get Logs"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-03-14 10:50:18.140413",
+ "modified": "2024-03-14 13:04:48.860465",
  "modified_by": "Administrator",
  "module": "Zk Api",
  "name": "Zk Settings",

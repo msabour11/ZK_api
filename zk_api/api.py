@@ -63,6 +63,6 @@ def filter_device_logs(start_d,end_d):
 
 
     # Get Device Log records within the date range
-    device_logs = frappe.get_all('Device Log', filters={'date': ['between', [start_date, end_date]]}, fields=['name', 'enroll_no', 'date', 'custom_time1', 'type'])
+    device_logs = frappe.get_all('Device Log', filters={'date': ['between', [start_date, end_date]]}, fields=['name', 'enroll_no', 'date', 'time', 'type'])
 
     return device_logs
