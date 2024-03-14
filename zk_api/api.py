@@ -58,7 +58,9 @@ def filter_device_logs(start_d,end_d):
     if start_d is None or end_d is None:
         frappe.msgprint('Error')
 
-    start_date=datetime.strptime(start_d,'%Y-%m-%d')
+    start_date=datetime.strptime(start_d,'%Y-%m-%d').date()
+    end_date=datetime.strptime(end_d,'%Y-%m-%d').date()
+
 
     # Get Device Log records within the date range
     device_logs = frappe.get_all('Device Log', filters={'date': ['between', [start_date, end_date]]}, fields=['name', 'enroll_no', 'date', 'custom_time1', 'type'])

@@ -8,6 +8,18 @@ frappe.ui.form.on("Zk Settings", {
 
 	},
 	filter_logs:function(frm){
-			frappe.msgprint('hello')
+			// frappe.msgprint('hello')
+			frappe.call({
+				method:"zk_api.api.filter_device_logs",
+				args:{
+					"start_d":frm.doc.start_date,
+					"end_d":frm.doc.end_date
+				},
+				dotype:"Device Log",
+				callback:function(r){
+					console.log('hello')
+					console.log(r)
+				}
+			})
 		}
 });

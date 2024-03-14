@@ -6,6 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "filter_logs",
+  "section_break_egna",
+  "device_logs",
   "section_break_qpmq",
   "start_date",
   "column_break_ozxw",
@@ -100,12 +102,22 @@
    "fieldname": "filter_logs",
    "fieldtype": "Button",
    "label": "Filter Logs"
+  },
+  {
+   "fieldname": "section_break_egna",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "device_logs",
+   "fieldtype": "Table",
+   "label": "Device Logs",
+   "options": "Logs Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-03-14 10:19:23.086882",
+ "modified": "2024-03-14 10:50:18.140413",
  "modified_by": "Administrator",
  "module": "Zk Api",
  "name": "Zk Settings",
