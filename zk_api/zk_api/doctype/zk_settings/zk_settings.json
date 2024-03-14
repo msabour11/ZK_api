@@ -5,6 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "filter_logs",
+  "section_break_qpmq",
   "start_date",
   "column_break_ozxw",
   "end_date",
@@ -89,12 +91,21 @@
    "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_qpmq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "filter_logs",
+   "fieldtype": "Button",
+   "label": "Filter Logs"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-03-14 02:06:49.692528",
+ "modified": "2024-03-14 10:19:23.086882",
  "modified_by": "Administrator",
  "module": "Zk Api",
  "name": "Zk Settings",
