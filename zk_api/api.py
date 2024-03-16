@@ -1,5 +1,7 @@
 import json
 from datetime import datetime
+import requests
+import json
 
 import frappe
 import uuid
@@ -44,7 +46,7 @@ def get_log():
     except Exception as e:
         return f"An error occurred: {e}"
 
-    # return data
+    return data
 
 
 @frappe.whitelist(allow_guest=True)
@@ -66,3 +68,16 @@ def filter_device_logs(start_d,end_d):
     device_logs = frappe.get_all('Device Log', filters={'date': ['between', [start_date, end_date]]}, fields=['name', 'enroll_no', 'date', 'time', 'type'])
 
     return device_logs
+
+@frappe.whitelist(allow_guest=True)
+def test():
+    url="https://dummyjson.com/posts"
+    ids=[]
+    response=requests.get(url)
+    data=response.json()
+    for record in data['posts']:
+        ids.append(record['title'])
+       # return record
+        
+
+    return ids

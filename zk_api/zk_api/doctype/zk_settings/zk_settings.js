@@ -44,49 +44,29 @@ frappe.ui.form.on("Zk Settings", {
 		}
 		},
 
-		// get_logs:function(frm){
-		// 	frappe.show_progress(__("Loading Device Logs"),0.5)
-		// 	frappe.call({
-		// 		method:"zk_api.api.get_log",
-		// 		callback:function(r){
-		// 			if (r.message){
-
-		// 			}
-		// 			  frappe.hide_progress();
-
-		// 		},
-		// 		error: function(err) {
-        //     frappe.hide_progress();
-        //     frappe.msgprint(__('Failed to load Device Logs. Please try again.'));
-        //     console.error(err);
-        // },
-        //        always: function() {
-        //        console.log("Always function called");
-        //           frappe.hide_progress();
-        //           }
-		// 	})
-		// }
-
 		get_logs:function(frm){
-    frappe.show_progress(__("Loading Device Logs"),0.5)
-    frappe.call({
-        method:"zk_api.api.get_log",
-        callback:function(r){
-            if (r.message){
-                // handle the response here
-            }
+			frappe.show_progress(__("Loading Device Logs"),0.5)
+			frappe.call({
+				method:"zk_api.api.get_log",
+				callback:function(r){
+					if (r.message){
+
+					}
+					  frappe.hide_progress();
+
+				},
+				error: function(err) {
             frappe.hide_progress();
-        },
-        error: function(err) {
             frappe.msgprint(__('Failed to load Device Logs. Please try again.'));
             console.error(err);
-            frappe.hide_progress();
         },
-        always: function() {
-            console.log("Always function called");
-        }
-    })
-}
+               always: function() {
+               console.log("Always function called");
+                  frappe.hide_progress();
+                  }
+			})
+		}
+
 
 
 

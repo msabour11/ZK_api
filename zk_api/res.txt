@@ -5,6 +5,48 @@
         "inOutMode": 1,
         "dateTime": "2024-03-05T18:39:48"
     },
+     {
+        "enrollNumber": "700",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+     {
+        "enrollNumber": "7001",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "6000",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "5005",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "5006",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "6001",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
+    {
+        "enrollNumber": "6002",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:39:48"
+    },
     
      {
         "enrollNumber": "2020",

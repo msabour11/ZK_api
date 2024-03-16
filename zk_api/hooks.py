@@ -133,23 +133,23 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"zk_api.tasks.all"
-# 	],
-# 	"daily": [
-# 		"zk_api.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"zk_api.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"zk_api.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"zk_api.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"all": [
+		"zk_api.api.get_log"
+	],
+	# "daily": [
+	# 	"zk_api.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"zk_api.api.get_log"
+	# ],
+	# "weekly": [
+	# 	"zk_api.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"zk_api.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
