@@ -2,14 +2,22 @@ import json
 from datetime import datetime
 import requests
 import json
-
+import os
 import frappe
 import uuid
 
 
 @frappe.whitelist(allow_guest=True)
 def get_log():
-    with open('/home/msabour/frappe-bench-dev/apps/zk_api/zk_api/res.txt', 'r') as f:
+    # Get the current directory of the script
+ 
+    current_dir = os.path.dirname(__file__)
+
+    # Construct the relative path to the file
+    relative_path = os.path.join(current_dir, 'res.txt')
+
+
+    with open(relative_path, 'r') as f:
         json_data = f.read()
 
     try:
@@ -53,10 +61,6 @@ def get_log():
 def filter_device_logs(start_d,end_d):
     # Get start_date and end_date from ZK Settings
     zk_settings = frappe.get_doc("Zk Settings")
-    # if zk_settings.start_date is None or zk_settings.end_date is None:
-    #     frappe.msgprint('error')
-    # start_date = datetime.strptime(zk_settings.start_date, '%Y-%m-%d').date()
-    # end_date = datetime.strptime(zk_settings.end_date, '%Y-%m-%d').date()
     if start_d is None or end_d is None:
         frappe.msgprint('Error')
 
@@ -69,15 +73,3 @@ def filter_device_logs(start_d,end_d):
 
     return device_logs
 
-@frappe.whitelist(allow_guest=True)
-def test():
-    url="https://dummyjson.com/posts"
-    ids=[]
-    response=requests.get(url)
-    data=response.json()
-    for record in data['posts']:
-        ids.append(record['title'])
-       # return record
-        
-
-    return ids
