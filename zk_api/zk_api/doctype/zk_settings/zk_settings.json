@@ -16,41 +16,26 @@
   "section_break_egna",
   "device_logs",
   "section_break_kvew",
-  "ip",
+  "ip_address_1",
   "column_break_xobs",
-  "device_name",
+  "name_1",
   "section_break_zkho",
-  "ip2",
+  "ip_address_2",
   "column_break_yayg",
-  "device_name2",
+  "name_2",
   "section_break_cxkv",
-  "ip3",
+  "ip_address_3",
   "column_break_oxhh",
-  "device_name3"
+  "name_3"
  ],
  "fields": [
-  {
-   "fieldname": "ip",
-   "fieldtype": "Data",
-   "label": "IP"
-  },
   {
    "fieldname": "column_break_xobs",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "device_name",
-   "fieldtype": "Data",
-   "label": "Device Name"
-  },
-  {
    "fieldname": "section_break_zkho",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "ip2",
-   "fieldtype": "Data",
-   "label": "IP2"
   },
   {
    "fieldname": "column_break_yayg",
@@ -61,27 +46,12 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "ip3",
-   "fieldtype": "Data",
-   "label": "IP3"
-  },
-  {
    "fieldname": "column_break_oxhh",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "device_name3",
-   "fieldtype": "Data",
-   "label": "Device Name3"
-  },
-  {
    "fieldname": "section_break_kvew",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "device_name2",
-   "fieldtype": "Data",
-   "label": "Device Name2"
   },
   {
    "fieldname": "start_date",
@@ -130,12 +100,42 @@
    "fieldname": "get_logs",
    "fieldtype": "Button",
    "label": "Get Logs"
+  },
+  {
+   "fieldname": "ip_address_1",
+   "fieldtype": "Data",
+   "label": "ip_address_1"
+  },
+  {
+   "fieldname": "name_1",
+   "fieldtype": "Data",
+   "label": "name_1"
+  },
+  {
+   "fieldname": "ip_address_2",
+   "fieldtype": "Data",
+   "label": "ip_address_2"
+  },
+  {
+   "fieldname": "name_2",
+   "fieldtype": "Data",
+   "label": "name_2"
+  },
+  {
+   "fieldname": "ip_address_3",
+   "fieldtype": "Data",
+   "label": "ip_address_3"
+  },
+  {
+   "fieldname": "name_3",
+   "fieldtype": "Data",
+   "label": "name_3"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-03-14 13:04:48.860465",
+ "modified": "2024-03-17 22:56:11.908380",
  "modified_by": "Administrator",
  "module": "Zk Api",
  "name": "Zk Settings",

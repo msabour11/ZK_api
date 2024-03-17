@@ -5,6 +5,19 @@
         "inOutMode": 1,
         "dateTime": "2024-03-05T18:39:48"
     },
+    
+     {
+        "enrollNumber": "2019",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-06-05T18:10:48"
+    },
+    {
+        "enrollNumber": "2032",
+        "verifyMode": 4,
+        "inOutMode": 1,
+        "dateTime": "2024-03-05T18:22:48"
+    },
     {
         "enrollNumber": "2025",
         "verifyMode": 4,
