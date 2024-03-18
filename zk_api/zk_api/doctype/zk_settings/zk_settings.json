@@ -16,16 +16,19 @@
   "section_break_egna",
   "device_logs",
   "section_break_kvew",
-  "ip_address_1",
+  "get_dev1",
   "column_break_xobs",
+  "ip_address_1",
   "name_1",
   "section_break_zkho",
-  "ip_address_2",
+  "get_dev2",
   "column_break_yayg",
+  "ip_address_2",
   "name_2",
   "section_break_cxkv",
-  "ip_address_3",
+  "get_dev3",
   "column_break_oxhh",
+  "ip_address_3",
   "name_3"
  ],
  "fields": [
@@ -130,12 +133,27 @@
    "fieldname": "name_3",
    "fieldtype": "Data",
    "label": "name_3"
+  },
+  {
+   "fieldname": "get_dev1",
+   "fieldtype": "Button",
+   "label": "get_dev1"
+  },
+  {
+   "fieldname": "get_dev2",
+   "fieldtype": "Button",
+   "label": "get_dev2"
+  },
+  {
+   "fieldname": "get_dev3",
+   "fieldtype": "Button",
+   "label": "get_dev3"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-03-17 22:56:11.908380",
+ "modified": "2024-03-18 13:08:11.204555",
  "modified_by": "Administrator",
  "module": "Zk Api",
  "name": "Zk Settings",

@@ -65,7 +65,31 @@ frappe.ui.form.on("Zk Settings", {
                   frappe.hide_progress();
                   }
 			})
-		}
+		},
+
+	get_dev1:function (frm){
+		frappe.call({
+				method:'zk_api.api.get_log_dev1',
+			callback:function (r){
+					console.log(r)
+			}
+		})
+
+
+
+	},
+
+	get_dev2:function (frm){
+		frappe.call({
+				method:'zk_api.api.get_log_dev2',
+			callback:function (r){
+					console.log(r)
+			}
+		})
+
+
+
+	}
 
 
 
