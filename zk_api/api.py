@@ -104,27 +104,27 @@ def get_url():
             data = response.json()
             for record in data:
                 date_time_str = record['dateTime']
-            date_time_obj = datetime.strptime(date_time_str, '%Y-%m-%dT%H:%M:%S')
-            date = date_time_obj.date()
-            time = date_time_obj.time()
-            in_out_mode = record['inOutMode']
-            type_map = {0: "IN", 1: "OUT"}
-            type1 = type_map.get(in_out_mode, "Unknown")
-            existing_records = frappe.db.exists("Device Log", {"enroll_no": record['enrollNumber'], "date": date,
-                                                               "time": record['dateTime']})
-            if not existing_records:
-                doc = frappe.get_doc({
-                    "doctype": "Device Log",
-                    'enroll_no': record['enrollNumber'],
-                    'time': record['dateTime'],
-                    'date': date,
-                    "type": type1
+                date_time_obj = datetime.strptime(date_time_str, '%Y-%m-%dT%H:%M:%S')
+                date = date_time_obj.date()
+                time = date_time_obj.time()
+                in_out_mode = record['inOutMode']
+                type_map = {0: "IN", 1: "OUT"}
+                type1 = type_map.get(in_out_mode, "Unknown")
+                existing_records = frappe.db.exists("Device Log", {"enroll_no": record['enrollNumber'], "date": date,
+                                                                   "time": record['dateTime']})
+                if not existing_records:
+                    doc = frappe.get_doc({
+                        "doctype": "Device Log",
+                        'enroll_no': record['enrollNumber'],
+                        'time': record['dateTime'],
+                        'date': date,
+                        "type": type1
 
-                })
+                    })
 
-                # doc.name = str(uuid.uuid4())
-                doc.name = custom_naming_function(doc, 'after_insert')
-                doc.insert()
+                    # doc.name = str(uuid.uuid4())
+                    doc.name = custom_naming_function(doc, 'after_insert')
+                    doc.insert()
 
             frappe.db.commit()
             return "Success: Device logs inserted successfully"
