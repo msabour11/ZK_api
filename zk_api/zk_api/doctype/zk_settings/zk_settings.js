@@ -47,7 +47,7 @@ frappe.ui.form.on("Zk Settings", {
 		get_logs:function(frm){
 			frappe.show_progress(__("Loading Device Logs"),0.5)
 			frappe.call({
-				method:"zk_api.api.get_log",
+				method:"zk_api.api.get_url",
 				callback:function(r){
 					if (r.message){
 
