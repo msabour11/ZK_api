@@ -154,10 +154,16 @@ def get_url():
     # return url_list
 
 @frappe.whitelist(allow_guest=True)
-def check_respons():
-    url="http://10.0.0.117/api/GetAttendance?ipAddress=197.161.88.220&startDate=2024-03-05&endDate=2024-03-06"
-    response=requests.get(url)
-    data=response.json()
+def get_log_dev1():
+    ip_address_1 = frappe.db.get_value("Zk Settings", None, 'ip_address_1')
+    if ip_address_1:
+         url=f"http://10.0.0.117/api/GetAttendance?ipAddress={ip_address_1}&startDate=2024-03-05&endDate=2024-03-06"
+         response=requests.get(url)
+         data=response.json
+
+       
+
+
 
     return data
     
