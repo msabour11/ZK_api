@@ -162,7 +162,8 @@ def get_log_dev1():
                         "type": type1
                     })
 
-                    doc.name = custom_naming_function(doc, 'after_insert')
+                    # doc.name = custom_naming_function(doc, 'after_insert')
+                    doc.name = str(uuid.uuid4())
                     doc.insert()
 
             frappe.db.commit()
