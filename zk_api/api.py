@@ -153,12 +153,11 @@ def get_url():
 
     # return url_list
 
-
+@frappe.whitelist(allow_guest=True)
 def check_respons():
     url="http://10.0.0.117/api/GetAttendance?ipAddress=197.161.88.220&startDate=2024-03-05&endDate=2024-03-06"
     response=requests.get(url)
     data=response.json()
-
 
     return data
     
