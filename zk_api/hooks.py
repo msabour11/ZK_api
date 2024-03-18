@@ -134,9 +134,9 @@ app_license = "mit"
 # ---------------
 
 scheduler_events = {
-	"all": [
-		"zk_api.api.get_log"
-	],
+	# "all": [
+	# 	"zk_api.api.get_log"
+	# ],
 	# "daily": [
 	# 	"zk_api.tasks.daily"
 	# ],
