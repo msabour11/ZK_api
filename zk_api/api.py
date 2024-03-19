@@ -216,8 +216,8 @@ def get_logs(ip_address,start_date,end_date):
                     'date': date,
                     "type": type1
                 })
-                doc.name = custom_naming_function(doc, 'after_insert')
-                # doc.name = str(uuid.uuid4())
+                # doc.name = custom_naming_function(doc, 'after_insert')
+                doc.name = str(uuid.uuid4())
                 doc.insert()
 
         frappe.db.commit()
