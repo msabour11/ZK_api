@@ -68,10 +68,19 @@ frappe.ui.form.on("Zk Settings", {
 		},
 
 	get_dev1:function (frm){
+		if(!frm.doc.end_date && !frm.doc.start_date){
+			frappe.msgprint('You must enter start and End Date')
+		}
 		frappe.call({
-				method:'zk_api.api.get_log_dev1',
+				method:'zk_api.api.get_logs',
+			args: {
+					"ip_address":frm.doc.ip_address_1,
+				    "start_date":frm.doc.start_date,
+				    "end_date":frm.doc.end_date,
+
+			},
 			callback:function (r){
-					console.log(r)
+					console.log(r.message)
 			}
 		})
 
@@ -79,17 +88,17 @@ frappe.ui.form.on("Zk Settings", {
 
 	},
 
-	get_dev2:function (frm){
-		frappe.call({
-				method:'zk_api.api.get_log_dev2',
-			callback:function (r){
-					console.log(r)
-			}
-		})
-
-
-
-	}
+	// get_dev2:function (frm){
+	// 	frappe.call({
+	// 			method:'zk_api.api.get_log_dev2',
+	// 		callback:function (r){
+	// 				console.log(r)
+	// 		}
+	// 	})
+	//
+	//
+	//
+	// }
 
 
 
