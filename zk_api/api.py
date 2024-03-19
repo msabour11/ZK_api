@@ -185,8 +185,8 @@ def is_valid_ip(ip_address):
 
 @frappe.whitelist(allow_guest=True)
 def get_logs(ip_address,start_date,end_date):
-    if not is_valid_ip(ip_address):
-        return "Invalid IP Address"
+    # if not is_valid_ip(ip_address):
+    #     return "Invalid IP Address"
     past_day = datetime.now() - timedelta(days=1)
     # start_date = past_day.strftime('%Y-%m-%d')
     try:
