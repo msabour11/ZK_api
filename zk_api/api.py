@@ -222,5 +222,7 @@ def get_logs(ip_address,start_date,end_date):
 
         frappe.db.commit()
         return "Data inserted successfully"
+    except requests.exceptions.Timeout:
+        frappe.msgprint('Request timed out Please try again later.')
     except requests.exceptions.RequestException as e:
         frappe.msgprint("Request Error: {0}".format(e))
