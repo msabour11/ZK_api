@@ -14,7 +14,7 @@ def custom_naming_function(doc, method):
 
 
 @frappe.whitelist(allow_guest=True)
-def get_log():
+def get_log(device_name):
     # Get the current directory of the script
 
     current_dir = os.path.dirname(__file__)
@@ -43,7 +43,8 @@ def get_log():
                     'enroll_no': record['enrollNumber'],
                     'time': record['dateTime'],
                     'date': date,
-                    "type": type1
+                    "type": type1,
+                    "device": device_name
 
                 })
 
@@ -132,107 +133,11 @@ def get_url():
         else:
             return f"error"
 
-    # return url_list
-
-
-@frappe.whitelist(allow_guest=True)
-def get_log_dev1():
-    ip_address_1 = frappe.db.get_value("Zk Settings", None, 'ip_address_1')
-    if ip_address_1:
-        url = f"http://10.0.0.117/api/GetAttendance?ipAddress={ip_address_1}&startDate=2024-03-05&endDate=2024-03-06"
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            for record in data:
-                date_time_str = record['dateTime']
-                date_time_obj = datetime.strptime(date_time_str, '%Y-%m-%dT%H:%M:%S')
-                date = date_time_obj.date()
-                time = date_time_obj.time()
-                in_out_mode = record['inOutMode']
-                type_map = {0: "IN", 1: "OUT"}
-                type1 = type_map.get(in_out_mode, "Unknown")
-                existing_records = frappe.db.exists("Device Log", {"enroll_no": record['enrollNumber'], "date": date,
-                                                                   "time": record['dateTime']})
-                if not existing_records:
-                    doc = frappe.get_doc({
-                        "doctype": "Device Log",
-                        'enroll_no': record['enrollNumber'],
-                        'time': record['dateTime'],
-                        'date': date,
-                        "type": type1
-                    })
-
-                    # doc.name = custom_naming_function(doc, 'after_insert')
-                    doc.name = str(uuid.uuid4())
-                    doc.insert()
-
-            frappe.db.commit()
-            return "data inserted successfully"
-
-
-def is_valid_ip(ip_address):
-    try:
-        parts = ip_address.split('.')
-        if len(parts) != 4:
-            return False
-        for part in parts:
-            if 0 <= int(part) <= 255:
-                return False
-        return True
-    except ValueError:
-        return False
-
-
-# @frappe.whitelist(allow_guest=True)
-# def get_logs(ip_address,start_date,end_date):
-#     # if not is_valid_ip(ip_address):
-#     #     return "Invalid IP Address"
-#     past_day = datetime.now() - timedelta(days=1)
-#     # start_date = past_day.strftime('%Y-%m-%d')
-#     try:
-#         url = f"http://10.0.0.117/api/GetAttendance?ipAddress={ip_address}&startDate={start_date}&endDate{end_date}"
-#         response = requests.get(url)
-#
-#         if response.status_code != 200:
-#             return "Failed to retrieve data from the device."
-#
-#         data = response.json()
-#
-#         for record in data:
-#             date_time_str = record['dateTime']
-#             date_time_obj = datetime.strptime(date_time_str, '%Y-%m-%dT%H:%M:%S')
-#             date = date_time_obj.date()
-#             time = date_time_obj.time()
-#             in_out_mode = record['inOutMode']
-#             type_map = {0: "IN", 1: "OUT"}
-#             type1 = type_map.get(in_out_mode, "Unknown")
-#
-#             if not frappe.db.exists("Device Log",
-#                                     {"enroll_no": record['enrollNumber'], "date": date, "time": record['dateTime']}):
-#                 doc = frappe.get_doc({
-#                     "doctype": "Device Log",
-#                     'enroll_no': record['enrollNumber'],
-#                     'time': record['dateTime'],
-#                     'date': date,
-#                     "type": type1
-#                 })
-#                 # doc.name = custom_naming_function(doc, 'after_insert')
-#                 doc.name = str(uuid.uuid4())
-#                 doc.insert()
-#
-#         frappe.db.commit()
-#         return "Data inserted successfully"
-#     except requests.exceptions.Timeout:
-#         frappe.msgprint('Request timed out Please try again later.')
-#     except requests.exceptions.RequestException as e:
-#         frappe.msgprint("Request Error: {0}".format(e))
-
-
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
 @frappe.whitelist(allow_guest=True)
-def get_logs(ip_address, start_date, end_date):
+def get_logs(ip_address, start_date, end_date,device_name):
 
     try:
         url = f"http://10.0.0.117/api/GetAttendance?ipAddress={ip_address}&startDate={start_date}&endDate={end_date}"
@@ -266,7 +171,8 @@ def get_logs(ip_address, start_date, end_date):
                     'enroll_no': record['enrollNumber'],
                     'time': record['dateTime'],
                     'date': date,
-                    "type": type1
+                    "type": type1,
+                    "device":device_name
                 })
                 doc.name = str(uuid.uuid4())
                 doc.insert()

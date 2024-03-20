@@ -47,7 +47,10 @@ frappe.ui.form.on("Zk Settings", {
 		get_logs:function(frm){
 			frappe.show_progress(__("Loading Device Logs"),0.5)
 			frappe.call({
-				method:"zk_api.api.get_url",
+				method:"zk_api.api.get_log",
+				args:{
+					'device_name':frm.doc.name_1,
+				},
 				callback:function(r){
 					if (r.message){
 
@@ -77,6 +80,7 @@ frappe.ui.form.on("Zk Settings", {
 					"ip_address":frm.doc.ip_address_1,
 				    "start_date":frm.doc.start_date,
 				    "end_date":frm.doc.end_date,
+					"device_name":frm.doc.name_1
 
 			},
 			callback:function (r){
