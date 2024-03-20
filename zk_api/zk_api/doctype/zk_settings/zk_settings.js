@@ -80,7 +80,7 @@ frappe.ui.form.on("Zk Settings", {
 					"ip_address":frm.doc.ip_address_1,
 				    "start_date":frm.doc.start_date,
 				    "end_date":frm.doc.end_date,
-					"device_name":frm.doc.name_1
+					"device_name":frm.doc.name_1,
 
 			},
 			callback:function (r){
