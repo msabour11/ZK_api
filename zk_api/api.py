@@ -48,8 +48,8 @@ def get_log(device_name):
 
                 })
 
-                # doc.name = str(uuid.uuid4())
-                doc.name = custom_naming_function(doc, 'after_insert')
+                doc.name = str(uuid.uuid4())
+                # doc.name = custom_naming_function(doc, 'after_insert')
                 doc.insert()
 
         frappe.db.commit()

@@ -134,21 +134,27 @@ app_license = "mit"
 # ---------------
 
 scheduler_events = {
-	"all": [
-		"zk_api.api.get_log_dev1"
-	],
-	# "daily": [
-	# 	"zk_api.tasks.daily"
-	# ],
-	# "hourly": [
-	# 	"zk_api.api.get_log"
-	# ],
-	# "weekly": [
-	# 	"zk_api.tasks.weekly"
-	# ],
-	# "monthly": [
-	# 	"zk_api.tasks.monthly"
-	# ],
+    # "all": [
+    # 	"zk_api.scheduled_tasks.test"
+    # ],
+    "cron": {
+        "*/5 * * * *": [
+            # "zk_api.scheduled_tasks.test",
+            "zk_api.scheduled_tasks.scheduled_dev1",
+        ]
+    }
+    # "daily": [
+    # 	"zk_api.tasks.daily"
+    # ],
+    # "hourly": [
+    # 	"zk_api.api.get_log"
+    # ],
+    # "weekly": [
+    # 	"zk_api.tasks.weekly"
+    # ],
+    # "monthly": [
+    # 	"zk_api.tasks.monthly"
+    # ],
 }
 
 # Testing
@@ -226,4 +232,3 @@ scheduler_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
